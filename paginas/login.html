@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,41 +9,51 @@
     <link rel="stylesheet" href="../css/styleLogin.css">
     <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <main class="telasLoginLogonCreation">
-        <div class="logo">
-            <picture>
-                <img src="../media/logo.png" alt="logo">
-            </picture>
-            
-        </div>
-        <div class="conteudo">
-            <h1>Entrar</h1>
-            <h2>Insira suas credenciais para acessar a plataforma</h2>
-            <form action="home_page.html">
-                <div class="Informations">
-                    <p class="email">
-                        <input type="text" name="login" id="login" placeholder="Login">
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+
+    <div id="container">
+        <main class="telasLoginLogonCreation">
+            <div class="logo">
+                <picture>
+                    <img src="../media/logo.png" alt="logo">
+                </picture>
+
+            </div>
+            <div class="conteudo">
+                <h1>Entrar</h1>
+                <h2>Insira suas credenciais para acessar a plataforma</h2>
+                <form action="home_page.html">
+                    <div class="Informations">
+                        <p class="email">
+                            <input type="text" name="login" id="login" placeholder="Login">
+                        </p>
+                        <p class="senha">
+
+                            <input type="password" id="senha" name="senha" placeholder="Senha">
+                        </p>
+                    </div>
+                    <a href="#">Esqueci minha senha</a>
+                    <p class="userType">
+                        <input type="radio" name="tipo" value="Adm" required id="adm"> <label
+                            for="adm">Administrador</label> <br>
+                        <input type="radio" name="tipo" value="Outros" id="outro" checked> <label for="outro">Outros
+                            Usuários</label> <br>
                     </p>
-                    <p class="senha">
-                    
-                        <input type="password" id="senha" name="senha" placeholder="Senha">
+                    <p>
+                        <input class="btConfirmar" type="submit" value="ENTRAR">
                     </p>
-                </div>
-                <a href="#">Esqueci minha senha</a>
-                <p class="userType">
-                    <input type="radio" name="tipo" value="Adm" required id="adm"> <label for="adm">Administrador</label> <br >
-                    <input type="radio" name="tipo" value="Outros" id="outro" checked> <label for="outro">Outros Usuários</label> <br>
-                </p>
-                <p>
-                    <input class="btConfirmar" type="submit" value="ENTRAR">
-                </p>
-                <p><a href="sign-up.html">Não possui uma conta?</a></p>
-        </div>
-        </form>
-    </main>
-    <footer>
-        <div>&copy; Todos os Direitos Reservados 2023.</div>
-    </footer>
+                    <p><a href="sign-up.html">Não possui uma conta?</a></p>
+            </div>
+            </form>
+        </main>
+        <footer>
+            <div>&copy; Todos os Direitos Reservados 2023.</div>
+        </footer>
+    </div>
+    <script src="../scripts/scriptLoadingScreen.js"></script>
+
 </body>
+
 </html>

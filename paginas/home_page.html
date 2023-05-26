@@ -15,7 +15,7 @@
 
 
 <body>
-  <div class="loader"></div>
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
 
   <div id="container">
     <header>
@@ -30,9 +30,9 @@
           </div>
         </form>
       </div>
-      <div class="userCard">
-        <img class="userPerfilImage" src="../media/genericUser.jpg" alt="" />
-        <h2 class="nameUser">Login</h2>
+      <div class="userCard" >
+        <img class="userPerfilImage" src="../media/genericUser.jpg" alt="" onclick="window.location.href='perfil.html'"/>
+        <h2 class="nameUser" onclick="window.location.href='login.html'">Login</h2>
       </div>
     </header>
 
@@ -118,44 +118,9 @@
     </footer>
   </div>
 </body>
-<script>
 
-
-  window.addEventListener("load", function () {
-    // Quando a página é completamente carregada, remove a tela de carregamento e mostra o conteúdo do site
-
-    // setTimeout(() =>{
-    var loader = document.querySelector(".loader");
-    loader.style.display = "none";
-    document.getElementById('container').style.display = "block";
-    // }, 5000);
-
-  });
-
-  document.getElementById('createNewTable').addEventListener('click', () => {
-    var novaMesa = document.createElement('li');
-    novaMesa.className = 'cardMesa';
-
-    novaMesa.innerHTML = `
-      <div onclick="window.location.href='table.html'">
-        <h3 class="cardMesa-titulo">Nome da Mesa</h3>
-        <div class="cardMesa-header">
-          <img src="../media/logo_mesa.png" alt="Imagem do Card" class="cardMesa-img" />
-          <div class="cardMesa-buttons">
-            <button class="config-button">
-              <i class="fa-solid fa-gear"></i>
-            </button>
-            <button class="delete-button">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-    `;
-
-    document.getElementById('lista_mesas').appendChild(novaMesa);
-  });
-</script>
+<script src="../scripts/scriptLoadingScreen.js"></script>
+<script src="../scripts/scriptTableCreation.js"></script>
 
 
 </html>

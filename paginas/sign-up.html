@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,47 +10,55 @@
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="../css/styleLogin.css">
 </head>
-<body>
-    <main class="telasLoginLogonCreation">
-        <div class="logo">
-            <picture>
-                <img src="../media/logo.png" alt="logo">
-            </picture>
-        </div>
-        <div class="conteudo">
-            <h1>Cadastrar</h1>
-            <h2>Insira suas credenciais para acessar a plataforma</h2>
-            <form action="login.html">
 
-                <div class="Informations">
+<body>
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+
+    <div id="container">
+        <main class="telasLoginLogonCreation">
+            <div class="logo">
+                <picture>
+                    <img src="../media/logo.png" alt="logo">
+                </picture>
+            </div>
+            <div class="conteudo">
+                <h1>Cadastrar</h1>
+                <h2>Insira suas credenciais para acessar a plataforma</h2>
+                <form action="login.html">
+                    <div class="Informations">
+                        <p>
+                            <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+                        </p>
+                        <p class="email">
+                            <input type="email" name="email" id="email" placeholder="E-mail">
+                        </p>
+                        <p>
+                            <input type="tel" name="telefone" id="telefone" placeholder="Telefone">
+                        </p>
+                        <p>
+                            <input type="hidden" id="cnpj" name="cnpj">
+                        </p>
+                        <p class="senha">
+                            <input type="password" id="senha" name="senha" placeholder="Senha">
+                        </p>
+                        <p class="con_senha">
+                            <input type="password" id="conf_senha" name="conf_senha" placeholder="Confrimar Senha">
+                        </p>
+                    </div>
                     <p>
-                        <input type="text" name="nome" id="nome" placeholder="Nome Completo">
+                        <input class="btConfirmar" type="submit" value="Salvar">
                     </p>
-                    <p class="email">
-                        <input type="email" name="email" id="email" placeholder="E-mail">
-                    </p>
-                    <p>
-                        <input type="tel" name="telefone" id="telefone" placeholder="Telefone">
-                    </p>
-                    <p>
-                        <input type="hidden" id="cnpj" name="cnpj">
-                    </p>
-                    <p class="senha">
-                        <input type="password" id="senha" name="senha" placeholder="Senha">
-                    </p>
-                    <p class="con_senha">
-                    
-                        <input type="password" id="conf_senha" name="conf_senha" placeholder="Confrimar Senha">
-                    </p>
-                </div>
-                <p>
-                    <input class="btConfirmar" type="submit" value="Salvar">
-                </p>
-                <p><a href="login.html">Já possui uma conta?</a></p>
-        </div>
-        </form>
-    </main>
-    <footer>
-        <div>&copy; Todos os Direitos Reservados 2023.</div>
+                    <p><a href="login.html">Já possui uma conta?</a></p>
+            </div>
+            </form>
+        </main>
+        <footer>
+            <div>&copy; Todos os Direitos Reservados 2023.</div>
+        </footer>
+    </div>
+    
 </body>
+<script src="../scripts/scriptLoadingScreen.js"></script>
+
+
 </html>

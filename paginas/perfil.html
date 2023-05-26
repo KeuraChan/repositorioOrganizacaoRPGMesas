@@ -14,23 +14,27 @@
 </head>
 
 <body>
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+
     <div class="container">
         <header>
-            <div class="userCard">
-                <img class="userPerfilImage" src="../media/genericUser.jpg" alt="">
-                <h2 class="nameUser">Login</h2>
-                <button>Cadastro</button>
-                <button>Login </button>
-            </div>
             <div class="title">
                 <h1>Dragon's Dice</h1>
                 <form action="">
                     <div class="search-box">
-                        <input type="search" class="input-search" placeholder="Buscar Mesas e GM's">
-                        <button class="btn-search" type="submit"><i class="fas fa-search"></i></button>
+                        <input type="search" class="input-search" placeholder="Buscar Mesas e GM's" />
+                        <button class="btn-search" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
                     </div>
                 </form>
             </div>
+            <div class="userCard">
+                <img class="userPerfilImage" src="../media/genericUser.jpg" alt=""
+                    onclick="window.location.href='perfil.html'" />
+                <h2 class="nameUser" onclick="window.location.href='login.html'">Login</h2>
+            </div>
+        </header>
 
 
         </header>
@@ -110,5 +114,7 @@
         </footer>
     </div>
 </body>
+<script src="../scripts/scriptLoadingScreen.js"></script>
+
 
 </html>

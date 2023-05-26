@@ -13,33 +13,42 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
-  <header id="headerGMNotes">
-    <h1>Nome da Mesa</h1>
-    <button id="toggle-edit">🔒</button>
-  </header>
-  <main>
-    <div class="GM_Notation">
-      <form action="">
-        <textarea class="GM_Notes" name="anotacao" id="anotacao" readonly></textarea>
-      </form>
-    </div>
-  </main>
-  <footer>
-      <!-- <div class="conteudo-footer"> -->
-        <div>&copy; Todos os Direitos Reservados 2023.</div>
-      <!-- </div> -->
-  </footer>
-  <script>
-    const toggleEditBtn = document.getElementById("toggle-edit");
-    const notesInput = document.getElementById("anotacao");
 
-    toggleEditBtn.addEventListener("click", () => {
-      notesInput.readOnly = !notesInput.readOnly;
-      toggleEditBtn.classList.toggle("active");
-      toggleEditBtn.textContent = notesInput.readOnly ? "🔒" : "🔓";
-    });
-  </script>
+<body>
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+
+  <div id="container">
+    <header id="headerGMNotes">
+      <h1>Nome da Mesa</h1>
+      <button id="toggle-edit">🔒</button>
+    </header>
+    <main>
+      <div class="GM_Notation">
+        <form action="">
+          <textarea class="GM_Notes" name="anotacao" id="anotacao" readonly></textarea>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <!-- <div class="conteudo-footer"> -->
+      <div>&copy; Todos os Direitos Reservados 2023.</div>
+      <!-- </div> -->
+    </footer>
+
+  </div>
 </body>
+
+<script>
+  const toggleEditBtn = document.getElementById("toggle-edit");
+  const notesInput = document.getElementById("anotacao");
+
+  toggleEditBtn.addEventListener("click", () => {
+    notesInput.readOnly = !notesInput.readOnly;
+    toggleEditBtn.classList.toggle("active");
+    toggleEditBtn.textContent = notesInput.readOnly ? "🔒" : "🔓";
+  });
+</script>
+<script src="../scripts/scriptLoadingScreen.js"></script>
+
 
 </html>

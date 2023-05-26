@@ -20,6 +20,31 @@
   font-style: normal;
 }
 
+.loader{
+  display: block;
+margin: 0 auto;
+width: 120px;
+height: 120px;
+margin: 100px auto;
+}
+
+.loader img{
+width: 120px;
+display: block;
+margin: 0 auto;
+animation: spin 2s infinite linear ;
+}
+
+@keyframes spin {
+0% { transform: rotate(0); }
+100% { transform: rotate(1turn); }
+}
+
+#container{
+  /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
+  display: none;
+}
+
 body {
   min-width: 450px;
   background-image: url("../media/bgcortado.jpg");

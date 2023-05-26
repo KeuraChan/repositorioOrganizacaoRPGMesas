@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mesa</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mesa</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+
+  <div id="container">
     <header>
       <h1>Nome da Mesa</h1>
     </header>
@@ -33,21 +34,18 @@
               <p>Adicionar Jogador</p>
             </a>
           </li>
-
           <li>
             <a href="#">
               <i class="fa-solid fa-receipt"></i>
               <p>Fichas Disponíveis</p>
             </a>
           </li>
-
           <li>
             <a href="GM_Notes.html">
               <i class="fa-solid fa-clipboard"></i>
               <p>Ver Anotações</p>
             </a>
           </li>
-
           <li>
             <a href="#">
               <i class="fa-solid fa-gear"></i>
@@ -58,7 +56,7 @@
       </nav>
     </div>
     <main>
-      
+
       <div class="mesa">
         <section class="Mestre">
           <div class="Mcard">
@@ -69,10 +67,8 @@
         </section>
         <ul class="Jogadores">
           <li class="Pcard">
-            <img
-              src="https://i.pinimg.com/originals/aa/01/66/aa0166d7292041406dfff8108055c38e.jpg"
-              alt="Foto de Usuário"
-            />
+            <img src="https://i.pinimg.com/originals/aa/01/66/aa0166d7292041406dfff8108055c38e.jpg"
+              alt="Foto de Usuário" />
             <p>Jeferson</p>
             <p>Zero - 3</p>
             <button>Ver Ficha</button>
@@ -101,5 +97,9 @@
     <footer>
       <div>&copy; Todos os Direitos Reservados 2023.</div>
     </footer>
-  </body>
+  </div>
+  <script src="../scripts/scriptLoadingScreen.js"></script>
+
+</body>
+
 </html>
