@@ -13,11 +13,15 @@ Repositório de organização para uma página RPGs de Mesa
   Tela de Logon;<br/>
   "Segredo" na Tela de Usuário;<br/>
   Responsividade das páginas¹<br/>
+  Melhor Responsividade das telas.(25/05/2023)<br/>
+  Tela de carregamento<br/>
   
   ¹É ainda necessário mexer nas páginas que utilizam de styleLogin para melhorar sua transição de responsividade.
  
  ## A se fazer:
   Implementar a API de DnD disponível em: https://www.dnd5eapi.co/docs/; <br/>
-  Melhor Responsividade das telas.<br/>
   Mudar o Card de usuário.<br/>
-  Ter foto de usuário;
+  Ter foto de usuário;<br/>
+  Adicionar opção de relatório em PDF(mostragem)<br/>
+  Adicionar placar<br/>
+  Adicionar Regras do Jogo<br/>
