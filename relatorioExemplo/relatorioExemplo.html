@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --button-accept-color: #4e9350;
+            --button-accept-color-hover: #3f7540;
+        }
+
+        .center {
+            text-align: center;
+            flex-direction: column;
+            display: flex;
+        }
+
+        #tabelaDeMesa {
+            align-self: center;
+            max-width: 1400px;
+            width: 1000px;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        #tabelaDeMesa thead tr {
+            background-color: rgb(199, 110, 38);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #tabelaDeMesa th,
+        #tabelaDeMesa td {
+
+            padding: 12px 15px;
+        }
+
+        #tabelaDeMesa tbody tr {
+            border-right: 1px solid rgb(199, 110, 38);
+            border-bottom: 1px solid #dddddd;
+        }
+
+        #tabelaDeMesa tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        #tabelaDeMesa tfoot {
+            border-bottom: 2px solid rgb(199, 110, 38);
+            border-right: 1px solid rgb(199, 110, 38);
+        }
+
+        #tabelaDeMesa tfoot td:nth-child(odd) {
+            background-color: #f3f3f3;
+        }
+
+        #tabelaDeMesa tfoot td:last-of-type {
+            background-color: rgba(199, 110, 38, 0.18);
+        }
+
+        .downloadButton {
+            align-self: center;
+            width: 200px;
+            margin-left: 15px;
+            background-color: var(--button-accept-color);
+            /* cor de fundo */
+            border: none;
+            /* borda zero */
+            color: white;
+            /* cor do texto */
+            padding: 10px 20px;
+            /* espaçamento interno */
+            text-align: center;
+            /* alinhamento do texto */
+            text-decoration: none;
+            /* remoção do sublinhado */
+            display: inline-block;
+            /* exibição em linha */
+            font-size: 1.09em;
+            border-radius: 8px;
+            transition: 0.5s;
+        }
+
+        .downloadButton:hover {
+            cursor: pointer;
+            background-color: var(--button-accept-color-hover);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h2>Participação na Mesa</h2>
+        <br />
+        <table id="tabelaDeMesa">
+            <thead>
+                <tr>
+                    <th>Mestre da Mesa</th>
+                    <th>Nome da Mesa</th>
+                    <th>Jogadores</th>
+                    <th>Horas Jogadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="5">Amara Lira</td>
+                    <td rowspan="5">Mesa 1</td>
+                </tr>
+                <tr>
+                    <td>Jeferson</td>
+                    <td>72 Horas</td>
+                </tr>
+                <tr>
+                    <td>Gabriel</td>
+                    <td>68 Horas</td>
+                </tr>
+                <tr>
+                    <td>Victor</td>
+                    <td>40 Horas</td>
+                </tr>
+                <tr>
+                    <td>Keura</td>
+                    <td>72 Horas</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total de Horas:</td>
+                    <td>252 Horas Jogadas</td>
+                </tr>
+            </tfoot>
+        </table>
+        <input class="downloadButton" type="button" onclick="generatePDF()" value="Baixar em PDF" />
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.plugin.addimage.js"></script>
+
+<script>
+    function generatePDF() {
+
+        let DataHoje = new Date();
+        let DataFormatada = DataHoje.getDate() + '-' + parseInt(DataHoje.getMonth() + 1) + '-' + DataHoje.getFullYear() + '-' + DataHoje.getHours() + '-' + DataHoje.getMinutes();
+
+        let doc = new jsPDF('p', 'pt', 'letter');
+        let htmlstring = '';
+        let tempVarToCheckPageHeight = 0;
+        let pageHeight = 0;
+        pageHeight = doc.internal.pageSize.height;
+        specialElementHandlers = {
+            // element with id of "bypass" - jQuery style selector  
+            '#bypassme': function (element, renderer) {
+                // true = "handled elsewhere, bypass text extraction"  
+                return true
+            }
+        };
+        margins = {
+            top: 150,
+            bottom: 60,
+            left: 150,
+            right: 150,
+            width: 600
+        };
+
+        var y = 20;
+
+        doc.setLineWidth(2);
+
+        // doc.addImage('../../media/logo.png', 'PNG', 2470, 10, 10, 10, 'logo', 'NONE', 0);
+
+        doc.text(200, y = y + 30, "Participação na Mesa");
+
+        doc.autoTable({
+            html: '#tabelaDeMesa',
+            startY: 80,
+            theme: 'grid',
+            styles: {
+                minCellHeight: 20
+            }
+        })
+        doc.save('Relatório_' + DataFormatada + '.pdf');
+    }
+</script>
+
+</html>
