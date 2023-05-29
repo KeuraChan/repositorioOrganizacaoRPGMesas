@@ -9,7 +9,7 @@
   --button-accept-color: #4e9350;
   --button-accept-color-hover: #3f7540;
   --text-in-black: #131313;
-  --text-in-black-WHover:#484848;
+  --text-in-black-WHover: #484848;
   --text-in-white: #e7e7e7;
 }
 
@@ -34,29 +34,34 @@
   border: 3px solid #eaeaea;
 }
 
-.loader{
-    display: block;
+.loader {
+  display: block;
   margin: 0 auto;
   width: 120px;
   height: 120px;
   margin: 100px auto;
 }
 
-.loader img{
+.loader img {
   width: 120px;
   display: block;
   margin: 0 auto;
-  animation: spin 2s infinite linear ;
+  animation: spin 2s infinite linear;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(1turn); }
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
-#container{
-    /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
-    display: none;
+#container {
+  /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
+  display: none;
 }
 
 body {
@@ -134,7 +139,7 @@ header {
   position: relative;
   color: var(--text-in-white);
   cursor: pointer;
-
+  transition: .2s;
 }
 
 .userCard h2:hover {
@@ -207,7 +212,7 @@ header h1 {
   pointer-events: painted;
 }
 
-.btn-search:focus ~ .input-search {
+.btn-search:focus~.input-search {
   width: 30px;
   border-radius: 0px;
   background-color: transparent;
@@ -278,11 +283,9 @@ header h1 {
 }
 
 .sidebar li a:hover {
-  background-image: linear-gradient(
-    to right,
-    rgba(199, 110, 38, 0.726) 7px,
-    rgb(0, 0, 0, 0.1) 7px
-  );
+  background-image: linear-gradient(to right,
+      rgba(199, 110, 38, 0.726) 7px,
+      rgb(0, 0, 0, 0.1) 7px);
   color: #fff;
 }
 
@@ -299,7 +302,7 @@ header h1 {
   margin-top: 10px;
 }
 
-.sidebar li .usarioUser{
+.sidebar li .usarioUser {
   display: none;
 }
 
@@ -416,13 +419,11 @@ header h1 {
 /* cards de mesa */
 .cardMesa {
   background: rgb(149, 149, 149);
-  background: linear-gradient(
-    133deg,
-    rgba(149, 149, 149, 0.558) 0%,
-    rgba(193, 193, 193, 0.76) 37%,
-    rgba(67, 67, 67, 0.354) 82%,
-    rgba(0, 0, 0, 0.65) 100%
-  );
+  background: linear-gradient(133deg,
+      rgba(149, 149, 149, 0.558) 0%,
+      rgba(193, 193, 193, 0.76) 37%,
+      rgba(67, 67, 67, 0.354) 82%,
+      rgba(0, 0, 0, 0.65) 100%);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
@@ -591,8 +592,11 @@ header h1 {
 }
 
 .user_info .textInfo {
-  font-family: "DragonHunt";
+  letter-spacing: 3px;
+  color: #000;
+  font-family: "DragonHunter";
   margin: 30px;
+
 }
 
 #toggle-edit {
@@ -625,7 +629,7 @@ footer {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #202123;
-  bottom: -10px;
+  bottom: 0;
   width: 100%;
   min-height: 110px;
   z-index: 1;
@@ -680,7 +684,7 @@ footer .redes-sociais i:hover {
 }
 
 @media screen and (max-width: 1400px) {
-  .conteudo-footer{
+  .conteudo-footer {
     justify-content: space-between;
   }
 
@@ -689,18 +693,18 @@ footer .redes-sociais i:hover {
     margin-bottom: 20px;
     width: 30%;
   }
-  
+
   footer .conteudo2 {
     width: 20%;
     margin-bottom: 20px;
   }
-  
+
   footer .conteudo2 h2 {
     font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   footer .conteudo3 {
     width: 30%;
     margin-bottom: 20px;
@@ -741,22 +745,23 @@ footer .redes-sociais i:hover {
     margin-bottom: 20px;
     width: 100%;
   }
-  
+
   footer .conteudo2 {
     width: 100%;
     margin-bottom: 20px;
   }
-  
+
   footer .conteudo2 h2 {
     font-size: 20px;
     margin-bottom: 20px;
     text-align: center;
   }
-  
+
   footer .conteudo3 {
     width: 100%;
     margin-bottom: 20px;
   }
+
   footer .redes-sociais {
     display: flex;
     justify-content: space-evenly;
@@ -765,9 +770,26 @@ footer .redes-sociais i:hover {
 }
 
 @media screen and (max-width: 500px) {
+
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #f1e9e927;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #24232548;
+    border-radius: 10px;
+    border: 0px solid #eaeaea08;
+  }
+
   header {
     display: none;
   }
+
   #headerGMNotes {
     display: flex;
   }
@@ -817,11 +839,9 @@ footer .redes-sociais i:hover {
   }
 
   .sidebar li a:hover {
-    background-image: linear-gradient(
-      to bottom,
-      rgba(216, 108, 20, 0.726) 7px,
-      rgb(0, 0, 0, 0.1) 7px
-    );
+    background-image: linear-gradient(to bottom,
+        rgba(216, 108, 20, 0.726) 7px,
+        rgb(0, 0, 0, 0.1) 7px);
     color: #fff;
   }
 
@@ -836,21 +856,22 @@ footer .redes-sociais i:hover {
     text-align: center;
   }
 
-  .sidebar li .usarioUser{
+  .sidebar li .usarioUser {
     display: flex;
   }
 
 
   main {
+    position: relative;
     margin: 90px auto auto auto;
     background-image: url("../media/bgcortado.jpg");
     background-size: cover;
     background-position: 50%;
-    height: 200vh;
-    width: 470px;
+    height: 100vh;
+    width: 100vw;
   }
 
-  
+
   .input-search {
     font-size: 14px;
   }
@@ -867,13 +888,29 @@ footer .redes-sociais i:hover {
     width: 100%;
   }
 
-  footer{
-    min-width: 450px;
+  .conteudo-footer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .user_info .textInfo {
+    width: 200px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.377);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.1px);
+    -webkit-backdrop-filter: blur(4.1px);
+  }
+
+  footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    height: min-content;
   }
 
 }
-
-
 
 
 /* Fix para o campo de busca em dispositivos mobiles */
@@ -886,7 +923,7 @@ footer .redes-sociais i:hover {
     padding-right: 15px;
   }
 
-  .btn-search:focus ~ .input-search {
+  .btn-search:focus~.input-search {
     width: 50%;
   }
 }
