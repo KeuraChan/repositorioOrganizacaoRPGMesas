@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+    font-family: 'Digital Numbers Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Digital Numbers Regular'), url('digital-numbers-cufonfonts-webfont/DigitalNumbers-Regular.woff') format('woff');
+    }
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +28,14 @@ body {
     padding: 45px;
     height: 400px;
     width: 400px;
-    background-color: #f7b37b6b;
+    background-image: linear-gradient(90deg, #47320c60, #E0A03560, #C78A2260, #472F0560);
+    -webkit-box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);    
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.9px);
     -webkit-backdrop-filter: blur(3.9px);
@@ -29,7 +43,7 @@ body {
 }
 
 .cards,
-.card,
+.carta_memoria,
 .view {
     display: flex;
     align-items: center;
@@ -43,11 +57,11 @@ body {
     justify-content: space-between;
 }
 
-.card {
+.carta_memoria {
     margin-bottom: 5px;
 }
 
-.cards .card {
+.cards .carta_memoria {
     cursor: pointer;
     position: relative;
     perspective: 800px;
@@ -56,54 +70,68 @@ body {
     width: calc(100% / 4.5 + 10px);
 }
 
-.card.shake{
+.carta_memoria.shake {
     animation: shake 0.2s ease-in-out;
 }
-@keyframes shake{
-    0%, 100%{
+
+@keyframes shake {
+
+    0%,
+    100% {
         transform: translateX(0);
     }
-    20%{
+
+    20% {
         transform: translateX(-13px);
     }
-    40%{
+
+    40% {
         transform: translateX(13px);
     }
-    60%{
+
+    60% {
         transform: translateX(-8px);
     }
-    80%{
+
+    80% {
         transform: translateX(8px);
     }
 }
 
-.card.shakeWin{
+.carta_memoria.shakeWin {
     animation: shakeWin 0.5s ease-in-out;
 }
-@keyframes shakeWin{
-    0%, 100%{
+
+@keyframes shakeWin {
+
+    0%,
+    100% {
         transform: scale(1.0);
         /* transform: translateY(0); */
     }
-    20%{
+
+    20% {
         transform: scale(0.7);
         /* transform: translateY(-13px); */
     }
-    40%{
+
+    40% {
         transform: scale(1.3);
         /* transform: translateY(13px); */
     }
-    60%{
+
+    60% {
         transform: scale(0.8);
         /* transform: translateY(-8px); */
     }
-    80%{
+
+    80% {
         transform: scale(1.2);
         /* transform: translateY(8px); */
     }
 }
 
-.cards .card .view {
+.cards .carta_memoria .view {
     width: 100%;
     height: 100%;
     user-select: none;
@@ -116,27 +144,101 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.212);
 }
 
-.card:hover {
+.carta_memoria:hover {
     transform: scale(1.02);
 }
 
-.card .front_view span {
-    color: #720000;
+.carta_memoria .view_frente span {
+    color: #6f351a;
     font-size: 40px;
 }
 
-.card .back_view {
+.carta_memoria .view_tras {
     transform: rotateY(180deg);
 }
 
-.card .back_view img {
+.carta_memoria .view_tras img {
     max-width: 45px;
 }
 
-.card.flip .front_view {
+.carta_memoria.flip .view_frente {
     transform: rotateY(-180deg);
 }
 
-.card.flip .back_view {
+.carta_memoria.flip .view_tras {
     transform: rotateY(0);
+}
+
+/* Style Placar */
+.container-placar {
+
+    position: absolute;
+    bottom: 2%;
+    background-image: linear-gradient(90deg, #47320c60, #E0A03560, #C78A2260, #472F0560);
+    -webkit-box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 11px rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 450px;
+    height: 20%;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#cronometro {
+    position: absolute;
+    top: 0;
+    /* border-bottom: 1px solid rgb(123, 184, 95) ; */
+}
+
+#cronometro p {
+    font-family: 'Digital Numbers Regular', 'Poppins', sans-serif;
+    color: rgb(255, 247, 236);
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(255, 196, 0),
+        0 0 82px rgb(255, 196, 0),
+        0 0 92px rgb(255, 196, 0),
+        0 0 102px rgb(255, 196, 0),
+        0 0 151px rgb(255, 196, 0);
+    font-size: 32px;
+    user-select: none;
+}
+
+.separador {
+    width: 50%;
+    height: 1px;
+    margin: 0 auto;
+    border: 0;
+    margin-bottom: 10px;
+    background: rgb(255, 188, 0);
+    background: linear-gradient(90deg, rgba(255, 188, 0, 1) 0%, rgba(255, 255, 255, 1) 48%, rgba(255, 188, 0, 1) 100%);
+    -webkit-box-shadow: 0px 0px 61px 14px rgba(255, 252, 235, 1);
+    -moz-box-shadow: 0px 0px 61px 14px rgba(255, 252, 235, 1);
+    box-shadow: 0px 0px 61px 14px rgba(255, 252, 235, 1);
+}
+
+#placar li{
+    font-family: 'Digital Numbers Regular', 'Poppins', sans-serif;
+}
+
+#placar li:first-child {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
 }

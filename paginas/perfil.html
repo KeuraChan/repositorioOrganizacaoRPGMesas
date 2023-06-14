@@ -2,25 +2,44 @@
 <html lang="pt-br">
 
 <head>
+     <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícone da página -->
     <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
+
+    <!-- Folha de estilos CSS -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Font Awesome - Biblioteca de ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Título da página -->
     <title>Meu Perfil</title>
+
+    <!-- Script para tela de carregamento -->
+    <script src="../scripts/scriptLoadingScreen.js"></script>
+
 </head>
 
 <body>
-  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+    <!-- Tela de carregamento -->
+    <div class="loader"><img
+            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
 
     <div class="container">
+
+        <!-- Cabeçalho -->
         <header>
             <div class="title">
                 <h1>Dragon's Dice</h1>
                 <form action="">
+
+                    <!-- Caixa de pesquisa -->
                     <div class="search-box">
                         <input type="search" class="input-search" placeholder="Buscar Mesas e GM's" />
                         <button class="btn-search" type="submit">
@@ -29,23 +48,28 @@
                     </div>
                 </form>
             </div>
+
+            <!-- Imagem do perfil do usuário -->
             <div class="userCard">
                 <img class="userPerfilImage" src="../media/genericUser.jpg" alt=""
                     onclick="window.location.href='perfil.html'" />
+                
+                <!-- Nome do usuário -->
                 <h2 class="nameUser" onclick="window.location.href='login.html'">Login</h2>
             </div>
         </header>
 
-
-        </header>
+        <!-- Barra lateral -->
         <div class="sidebar">
+
+            <!-- Logo -->
             <div class="logo">
                 <a href="home_page.html">
                     <img src="../media/logo.png" alt="logo">
                 </a>
             </div>
             <nav>
-                <ul>
+                <ul><!-- Links de navegação -->
                     <li>
                         <a href="./easteregg/memory.html">
                             <i class="fa-solid fa-dice-d20"></i>
@@ -90,7 +114,7 @@
                         <input type="text" name="SobrenmUser" id="SobrenomeUser" placeholder="Sobrenome">
                         <input type="email" name="emailUser" id="emailUser" placeholder="email@email.com">
                         <input type="text" name="nickUser" id="nickUser" placeholder="Apelido">
-                        <input type="tel" name="nickUser" id="nickUser" placeholder="(00)000000000">
+                        <input class="telefone" type="tel" name="nickUser" id="telUser" placeholder="(00)000000000">
                         <br>
                         <input type="submit" value="Salvar">
                     </form>
@@ -98,8 +122,8 @@
                     <form action="" class="formularioSenha">
                         <h2 class="textInfo InfoSenha">Senha</h2>
                         <input type="password" placeholder="Confirme sua senha atual">
-                        <input type="password" placeholder="Senha" readonly>
-                        <input type="password" placeholder="Confirme a Nova Senha" readonly>
+                        <input class="senha" type="password" placeholder="Senha"> <!-- readonly -->
+                        <input class="conf_senha" type="password" placeholder="Confirme a Nova Senha"><!-- readonly -->
                         <input type="submit" value="Salvar">
                     </form>
 
@@ -114,7 +138,54 @@
         </footer>
     </div>
 </body>
-<script src="../scripts/scriptLoadingScreen.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
+    integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+
+
+<script>
+    <!-- script mask -->
+    $(document).ready(function(){      
+      $('#telUser').mask('(00) 000000000');
+    });
+</script>
+
+
+
+<script>
+    let verificaSenha = document.querySelector('.senha');
+    let verificaConfirmarSenha = document.querySelector('.conf_senha');
+
+    verificaConfirmarSenha.addEventListener('blur', () => {
+        if (verificaConfirmarSenha.value == verificaSenha.value && verificaConfirmarSenha.value != "" && verificaSenha.value != "") {
+            verificaConfirmarSenha.style.backgroundColor = '#EBFFEB';
+        }
+        else {
+            verificaConfirmarSenha.style.backgroundColor = '#FFF0F0';
+        }
+    });
+
+    verificaSenha.addEventListener('blur', () => {
+        if (verificaConfirmarSenha.value == verificaSenha.value) {
+            verificaConfirmarSenha.style.backgroundColor = '#EBFFEB';
+        }
+        else if (verificaConfirmarSenha.value == "") {
+            verificaConfirmarSenha.style = '';
+        }
+        else {
+            verificaConfirmarSenha.style.backgroundColor = '#FFF0F0';
+        }
+    });
+
+
+</script>
 
 </html>
