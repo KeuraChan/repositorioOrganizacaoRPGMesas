@@ -92,8 +92,7 @@ function addToScoreBoard(tempo) {
   novaPontuacao.innerHTML = tempo;
   document.getElementById("placar").appendChild(novaPontuacao);
   var msg = new SpeechSynthesisUtterance();
-  msg.text = "Seu tempo foi d
-  e " + tempo;
+  msg.text = "Seu tempo foi de " + tempo;
   window.speechSynthesis.speak(msg);
   sortingPlacar();
 }
