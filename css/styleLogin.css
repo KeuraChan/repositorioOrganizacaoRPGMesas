@@ -5,6 +5,11 @@
   --button-reject-color-hover: #6f3333;
 }
 
+#container {
+  /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
+  display: none;
+}
+
 * {
   transition: 100ms;
   margin: 0;
@@ -20,30 +25,36 @@
   font-style: normal;
 }
 
-.loader{
+.loader {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 120px);
+
   display: block;
-margin: 0 auto;
-width: 120px;
-height: 120px;
-margin: 100px auto;
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  margin: 100px auto;
 }
 
-.loader img{
-width: 120px;
-display: block;
-margin: 0 auto;
-animation: spin 2s infinite linear ;
+.loader img {
+  width: 120px;
+  display: block;
+  margin: 0 auto;
+  animation: spin 2s infinite linear;
 }
 
 @keyframes spin {
-0% { transform: rotate(0); }
-100% { transform: rotate(1turn); }
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
+  }
 }
 
-#container{
-  /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
-  display: none;
-}
+
 
 body {
   min-width: 450px;
@@ -134,7 +145,7 @@ body {
   margin-right: 10px;
 }
 
-.userType input[type="radio"] + label {
+.userType input[type="radio"]+label {
   display: inline-block;
   vertical-align: middle;
 }
@@ -147,7 +158,8 @@ body {
   transform: scale(1.02);
 }
 
-.Informations input, #chooseGM {
+.Informations input,
+#chooseGM {
   display: inline-block;
   width: 100%;
   padding: 10px;
@@ -186,9 +198,11 @@ body {
 .formulario input[id="nomeMesa"] {
   width: 50%;
 }
+
 .conteudo input[type="number"] {
   width: 50px;
 }
+
 input,
 select {
   display: inline-block;
@@ -198,6 +212,7 @@ select {
   border: none;
   border-radius: 8px;
 }
+
 .btConfirmar {
   font-family: DragonHunter;
 
@@ -222,6 +237,7 @@ select {
   border-radius: 8px;
   transition: 0.5s;
 }
+
 .btConfirmar:hover {
   cursor: pointer;
   background-color: var(--button-accept-color-hover);

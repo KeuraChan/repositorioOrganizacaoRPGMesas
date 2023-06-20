@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,118 +8,161 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styleMemory.css">
     <title>Jogo da Memória</title>
+    <script src="../../scripts/scriptLoadingScreen.js"></script> <!-- Script da tela de loading -->
+
 </head>
+
 <body>
-    <div class="wrapper">
-        <ul class="cards">
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d4.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d6.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d8.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d10.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d12.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d100.png" alt="card-img">
-                </div>
-            </li><li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d4.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d6.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d8.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d10.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d12.png" alt="card-img">
-                </div>
-            </li>
-            <li class="carta_memoria">
-                <div class="view view_frente">
-                    <span class="material-icons">question_mark</span>
-                </div>
-                <div class="view view_tras">
-                    <img src="../../media/dice/d100.png" alt="card-img">
-                </div>
-            </li>
-        </ul>
+    <div class="loader"><img
+            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt="">
     </div>
-    <div class="container-placar">
-        <div id="cronometro">
-            <p class="numChrono">00:00:00</p>
+    <div id="container">
+
+        <!-- Início do conteúdo da página -->
+        <div class="wrapper">
+            <ul class="cards">
+                <!-- Lista não ordenada para representar as cartas do jogo -->
+                <!-- CARTAS FRENTE E VERSO, IMAGEM DEFINIDA NO view-tras -->
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d6.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d8.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d10.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d12.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d20.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d4.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d6.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d8.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d10.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d12.png" alt="card-img">
+                    </div>
+                </li>
+                <li class="carta_memoria">
+                    <div class="view view_frente">
+                        <span class="material-icons">question_mark</span>
+                    </div>
+                    <div class="view view_tras">
+                        <img src="../../media/dice/d20.png" alt="card-img">
+                    </div>
+                </li>
+            </ul>
         </div>
-        <hr class="separador">
-        <ul id="placar">
-            
-        </ul>
+
+        <!-- Fim do conteúdo da página -->
+
+        <!-- Botão para exibir as regras do jogo -->
+        <button id="open-btn">
+            Regras
+        </button>
+
+        <!-- Modal com as regras do jogo -->
+        <div id="modal-container">
+            <div id="modal">
+                <div id="close-btn">&times;</div> <!-- Botão para fechar o modal-->
+
+                <!-- Lista ordenada para exibir as regras -->
+                <ol>
+                    <li>O jogo consiste em um conjunto de cartas viradas para baixo em uma mesa.</li>
+                    <li>Cada carta tem um símbolo em seu verso.</li>
+                    <li>O jogador pode virar duas cartas por vez, tentando encontrar pares correspondentes. </li>
+                    <li>Se as duas cartas viradas pelo jogador formarem um par correspondente, elas são removidas do
+                        jogo.
+                    </li>
+                    <li>Se as duas cartas não formarem um par correspondente, elas são viradas novamente para baixo.
+                    </li>
+                    <li>O tempo continua a ser contado enquanto o jogador faz suas jogadas. </li>
+                    <li>O jogo termina quando o jogador encontrar todos os pares. </li>
+                    <li>O objetivo é acertar todos os pares no menor tempo possível. </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Outros elementos e scripts JavaScript -->
+        <div class="container-placar">
+            <div id="cronometro">
+                <p class="numChrono">00:00:00</p>
+            </div>
+            <hr class="separador">
+            <ul id="placar">
+
+            </ul>
+        </div>
     </div>
-</body>
-<script src="script.js"></script>
-<script src="../../scripts/scriptLoadingScreen.js"></script>
 
 </html>
+<script src="script.js"></script> <!-- Script do jogo da Memória -->
+<script src="scriptModal.js"></script> <!-- Script do Modal -->

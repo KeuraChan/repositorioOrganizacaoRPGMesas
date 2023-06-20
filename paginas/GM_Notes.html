@@ -1,54 +1,109 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anotações da Mesa</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Configurações da página -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícone da página -->
+    <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/styleLogin.css">
+    <title>Criar uma Mesa</title>
 </head>
 
-
 <body>
-  <div class="loader"><img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt=""></div>
+    <!-- Elemento de carregamento -->
+    <div class="loader">
+        <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/7937643/d20-clipart-md.png" alt="">
+    </div>
 
-  <div id="container">
-    <header id="headerGMNotes">
-      <h1>Nome da Mesa</h1>
-      <button id="toggle-edit">🔒</button>
-    </header>
-    <main>
-      <div class="GM_Notation">
-        <form action="">
-          <textarea class="GM_Notes" name="anotacao" id="anotacao" readonly></textarea>
-        </form>
-      </div>
-    </main>
-    <footer>
-      <!-- <div class="conteudo-footer"> -->
-      <div>&copy; Todos os Direitos Reservados 2023.</div>
-      <!-- </div> -->
-    </footer>
+    <!-- Container principal -->
+    <div id="container">
+        <!-- Conteúdo da página -->
+        <main class="telasLoginLogonCreation">
+            <!-- Formulário de criação de mesa -->
+            <div class="criacao">
+                <!-- Logo -->
+                <div class="logo">
+                    <picture>
+                        <img src="../media/logo.png" alt="logo">
+                    </picture>
+                </div>
+                <div class="conteudo">
+                    <form action="home_page.html">
+                        <!-- Campos do formulário -->
+                        <div class="formulario Informations">
+                            <p>
+                                <input type="text" id="nomeMesa" name="nomeMesa" placeholder="Nome da Mesa" required>
+                                <label for="nJogadores">N°</label>
+                                <input type="number" id="nJogadores" name="nJogadores" min="1" max="9">
+                            </p>
 
-  </div>
+                            <label for="dataJogo">Data do Jogo</label>
+                            <input type="datetime-local" id="dataJogo" name="dataJogo" step="900">
+                            </p>
+                            <p>
+                                <label for="duracao">Duração:</label>
+                                <input type="time" name="duracao" id="duracao" step="900" max="08:00">
+                            </p>
+                            <p>
+                                <select name="chooseGM" id="chooseGM" class="Informations">
+                                    <option value="0" selected disabled>Escolha um GM</option>
+                                </select>
+                            </p>
+                        </div>
+
+                        <!-- Botões do formulário -->
+                        <div class="botoes">
+                            <button class="btConfirmar" type="submit" onclick="fecharJanela()">Criar Mesa</button>
+                            <button class="btCancelar" type="reset" onclick="fecharJanela()">Cancelar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- Rodapé -->
+        <footer>
+            <div>&copy; Todos os Direitos Reservados 2023.</div>
+        </footer>
+    </div>
+
+    <!-- Script para definir a data mínima do campo "dataJogo" -->
+    <script>
+        const today = new Date().toISOString().split("T")[0] + 'T00:00';
+        var minDate = document.getElementById("dataJogo");
+        minDate.setAttribute('min', today);
+    </script>
+
+    <!-- Script para controlar a validação do campo "nJogadores" -->
+    <script>
+        var nJogadores = document.getElementById('nJogadores');
+        const maxPlayers = nJogadores.getAttribute('max');
+
+        nJogadores.addEventListener('blur', () => {
+            if (parseInt(nJogadores.value) > maxPlayers) {
+                nJogadores.style.border = '1px solid #994444';
+                nJogadores.style.backgroundColor = '#f3e1e1';
+                nJogadores.style.color = '#341717';
+            } else {
+                nJogadores.style.border = '';
+                nJogadores.style.backgroundColor = '';
+                nJogadores.style.color = '';
+            }
+        });
+
+        function fecharJanela() {
+            window.close();
+        }
+    </script>
+
+    <!-- Script externo para exibição da tela de carregamento -->
+    <script src="../scripts/scriptLoadingScreen.js"></script>
 </body>
-
-<script>
-  const toggleEditBtn = document.getElementById("toggle-edit");
-  const notesInput = document.getElementById("anotacao");
-
-  toggleEditBtn.addEventListener("click", () => {
-    notesInput.readOnly = !notesInput.readOnly;
-    toggleEditBtn.classList.toggle("active");
-    toggleEditBtn.textContent = notesInput.readOnly ? "🔒" : "🔓";
-  });
-</script>
-<script src="../scripts/scriptLoadingScreen.js"></script>
-
 
 </html>

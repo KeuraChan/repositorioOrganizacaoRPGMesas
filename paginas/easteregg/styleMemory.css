@@ -1,12 +1,81 @@
+/* Importando a fonte do Google Fonts para a página */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Definindo a fonte para os números do cronômetro */
 @font-face {
     font-family: 'Digital Numbers Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Digital Numbers Regular'), url('digital-numbers-cufonfonts-webfont/DigitalNumbers-Regular.woff') format('woff');
+}
+
+/* Definindo estilos gerais */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para a barra de rolagem */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #f1e9e9;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #242325;
+    border-radius: 10px;
+    border: 3px solid #eaeaea;
+}
+.loader {
+    /* Estilo do elemento de carregamento */
+    position: absolute;
+    top: 0;
+    left: calc(50% - 120px);
+
+    /* Centraliza verticalmente o elemento */
+    display: block;
+    margin: 0 auto;
+
+    /* Define o tamanho do elemento */
+    width: 120px;
+    height: 120px;
+
+    /* Define a posição vertical do elemento */
+    margin: 100px auto;
+}
+
+.loader img {
+    /* Estilo da imagem dentro do loader */
+    width: 120px;
+    display: block;
+    margin: 0 auto;
+
+    /* Animação de rotação */
+    animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+    /* Animação de rotação */
+    0% {
+        transform: rotate(0); /* Inicia sem rotação */
     }
 
+    100% {
+        transform: rotate(1turn); /* Completa uma volta (360 graus) */
+    }
+}
+
+#container {
+    /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
+    display: none;
+}
+
+/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +83,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* Estilos para o corpo da página */
 body {
     display: flex;
     align-items: center;
@@ -24,6 +94,7 @@ body {
     background-repeat: space;
 }
 
+/* Estilos para o container principal */
 .wrapper {
     padding: 45px;
     height: 400px;
@@ -35,13 +106,14 @@ body {
     backdrop-filter: blur(7.5px);
     -webkit-backdrop-filter: blur(7.5px);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);    
+    border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3.9px);
     -webkit-backdrop-filter: blur(3.9px);
     border-radius: 10px;
 }
 
+/* Estilos para a lista de cartas */
 .cards,
 .carta_memoria,
 .view {
@@ -57,10 +129,14 @@ body {
     justify-content: space-between;
 }
 
+/* Define uma margem inferior de 5 pixels para as cartas de memória. */
 .carta_memoria {
     margin-bottom: 5px;
 }
 
+/* Aplica estilos às cartas de memória dentro do elemento com a classe "cards". */
+/* Define o cursor como um ponteiro, indica que as cartas têm uma perspectiva tridimensional, */
+/* define a altura e largura das cartas com base em cálculos e preserva o estilo de transformação 3D. */
 .cards .carta_memoria {
     cursor: pointer;
     position: relative;
@@ -70,10 +146,13 @@ body {
     width: calc(100% / 4.5 + 10px);
 }
 
+/* Define uma animação chamada "shake" que é aplicada às cartas de memória com a classe "shake". */
+/* A animação tem uma duração de 0.2 segundos e usa uma função de temporização de aceleração e desaceleração. */
 .carta_memoria.shake {
     animation: shake 0.2s ease-in-out;
 }
 
+/* Define a animação "shake" com vários estágios de transformação para criar um efeito de agitação. */
 @keyframes shake {
 
     0%,
@@ -98,10 +177,13 @@ body {
     }
 }
 
+/* Define uma animação chamada "shakeWin" que é aplicada às cartas de memória com a classe "shakeWin". */
+/* A animação tem uma duração de 0.5 segundos e usa uma função de temporização de aceleração e desaceleração. */
 .carta_memoria.shakeWin {
     animation: shakeWin 0.5s ease-in-out;
 }
 
+/* Define a animação "shakeWin" com vários estágios de transformação para criar um efeito de agitação. */
 @keyframes shakeWin {
 
     0%,
@@ -131,7 +213,8 @@ body {
     }
 }
 
-.cards .carta_memoria .view {
+/* Define estilos para a parte visível da carta de memória. */
+.carta_memoria .view {
     width: 100%;
     height: 100%;
     user-select: none;
@@ -144,34 +227,39 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.212);
 }
 
+/* Efeito de escala quando o mouse passa sobre a carta de memória */
 .carta_memoria:hover {
     transform: scale(1.02);
 }
 
+/* Estiliza a frente da carta de memória */
 .carta_memoria .view_frente span {
     color: #6f351a;
     font-size: 40px;
 }
 
+/* Rotaciona a carta de memória para exibir o verso */
 .carta_memoria .view_tras {
     transform: rotateY(180deg);
 }
 
+/* Define a largura máxima da imagem dentro da carta de memória */
 .carta_memoria .view_tras img {
     max-width: 45px;
 }
 
+/* Efeito de rotação da carta de memória ao ser virada */
 .carta_memoria.flip .view_frente {
     transform: rotateY(-180deg);
 }
 
+/* Reverte a rotação da carta de memória para exibir a frente */
 .carta_memoria.flip .view_tras {
     transform: rotateY(0);
 }
 
-/* Style Placar */
+/* Estilo do placar */
 .container-placar {
-
     position: absolute;
     bottom: 2%;
     background-image: linear-gradient(90deg, #47320c60, #E0A03560, #C78A2260, #472F0560);
@@ -191,6 +279,7 @@ body {
     justify-content: center;
 }
 
+/* Estilo do cronômetro */
 #cronometro {
     position: absolute;
     top: 0;
@@ -213,6 +302,7 @@ body {
     user-select: none;
 }
 
+/* Estilo do separador */
 .separador {
     width: 50%;
     height: 1px;
@@ -226,10 +316,12 @@ body {
     box-shadow: 0px 0px 61px 14px rgba(255, 252, 235, 1);
 }
 
-#placar li{
+/* Estilo dos itens da lista de placar */
+#placar li {
     font-family: 'Digital Numbers Regular', 'Poppins', sans-serif;
 }
 
+/* Estilo do primeiro item da lista de placar */
 #placar li:first-child {
     color: #fff;
     text-shadow:
@@ -241,4 +333,103 @@ body {
         0 0 92px #0fa,
         0 0 102px #0fa,
         0 0 151px #0fa;
+}
+
+/* Estilo do botão de abrir o modal */
+#open-btn {
+    transform: scale(0.7);
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    font-size: 1.2rem;
+    background: rgba(255, 255, 255, 0.373);
+    color: white;
+    border: 2px solid white;
+    transition: .5s;
+    border-radius: 100%;
+}
+
+/* Estilo do botão de abrir o modal ao passar o mouse */
+#open-btn:hover {
+    transform: scale(1);
+    background-color: white;
+    color: black;
+}
+
+/* Estilo do modal */
+#modal {
+    text-align: justify;
+    background-color: wheat;
+    height: 500px;
+    align-items: center;
+    overflow-y: scroll;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    padding-left: 50px;
+    animation-name: animateModal;
+    animation-duration: .4s;
+    border-radius: 5px;
+}
+
+/* Estilo dos itens da lista no modal */
+#modal li {
+    margin-bottom: 10px;
+}
+
+/* Estilo do botão de fechar o modal */
+#close-btn {
+    position: block;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 2em;
+    font-size: 2rem;
+    transition: .5s;
+    color: red;
+}
+
+#close-btn p {
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* Estilo do botão de fechar o modal ao passar o mouse */
+#close-btn:hover {
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    background-color: rgb(245, 197, 179);
+}
+
+/* Estilo do container do modal */
+#modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Animação do modal */
+@keyframes animateModal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 50%;
+        opacity: 1;
+    }
 }

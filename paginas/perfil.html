@@ -2,7 +2,7 @@
 <html lang="pt-br">
 
 <head>
-     <!-- Meta tags -->
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,7 +53,7 @@
             <div class="userCard">
                 <img class="userPerfilImage" src="../media/genericUser.jpg" alt=""
                     onclick="window.location.href='perfil.html'" />
-                
+
                 <!-- Nome do usuário -->
                 <h2 class="nameUser" onclick="window.location.href='login.html'">Login</h2>
             </div>
@@ -121,9 +121,9 @@
 
                     <form action="" class="formularioSenha">
                         <h2 class="textInfo InfoSenha">Senha</h2>
-                        <input type="password" placeholder="Confirme sua senha atual">
-                        <input class="senha" type="password" placeholder="Senha"> <!-- readonly -->
-                        <input class="conf_senha" type="password" placeholder="Confirme a Nova Senha"><!-- readonly -->
+                        <input class="senha" type="password" placeholder="Confirme sua senha atual">
+                        <input class="novaSenha locked" type="password" placeholder="Nova Senha" readonly>
+                        <input class="conf_senha locked" type="password" placeholder="Confirme a Nova Senha" readonly>
                         <input type="submit" value="Salvar">
                     </form>
 
@@ -142,27 +142,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-</script>
+    </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
     integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
     crossorigin="anonymous" referrerpolicy="no-referrer">
-</script>
+    </script>
 
 
 
 <script>
     <!-- script mask -->
-    $(document).ready(function(){      
-      $('#telUser').mask('(00) 000000000');
+    $(document).ready(function () {
+        $('#telUser').mask('(00) 000000000');
     });
 </script>
 
 
 
 <script>
-    let verificaSenha = document.querySelector('.senha');
+    let senha = document.querySelector('.senha');
+    let verificaSenha = document.querySelector('.novaSenha');
     let verificaConfirmarSenha = document.querySelector('.conf_senha');
+
+    senha.addEventListener('blur', () => {
+        if (senha.value == "admin") {
+            verificaSenha.removeAttribute("readonly");
+            verificaConfirmarSenha.removeAttribute("readonly");
+
+            verificaSenha.classList.remove('locked');
+            verificaConfirmarSenha.classList.remove('locked');
+        } else {
+            verificaSenha.setAttribute("readonly", "readonly");
+            verificaConfirmarSenha.setAttribute("readonly", "readonly");
+
+            verificaSenha.classList.add('locked');
+            verificaConfirmarSenha.classList.add('locked');
+        }
+    });
 
     verificaConfirmarSenha.addEventListener('blur', () => {
         if (verificaConfirmarSenha.value == verificaSenha.value && verificaConfirmarSenha.value != "" && verificaSenha.value != "") {
@@ -171,19 +188,13 @@
         else {
             verificaConfirmarSenha.style.backgroundColor = '#FFF0F0';
         }
+
+        if (verificaSenha.value == "") {
+            verificaConfirmarSenha.style.backgroundColor = '';
+        }
     });
 
-    verificaSenha.addEventListener('blur', () => {
-        if (verificaConfirmarSenha.value == verificaSenha.value) {
-            verificaConfirmarSenha.style.backgroundColor = '#EBFFEB';
-        }
-        else if (verificaConfirmarSenha.value == "") {
-            verificaConfirmarSenha.style = '';
-        }
-        else {
-            verificaConfirmarSenha.style.backgroundColor = '#FFF0F0';
-        }
-    });
+
 
 
 </script>
