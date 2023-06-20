@@ -14,7 +14,7 @@ Repositório de organização para uma página RPGs de Mesa
   Tela de Login;<br/>
   Tela de Logon;<br/>
   "Segredo" na Tela de Usuário;<br/>
-  Responsividade das páginas¹<br/>
+  Responsividade das páginas<br/>
  
  ## A se fazer:
   Implementar a API de DnD disponível em: https://www.dnd5eapi.co/docs/; <br/>
