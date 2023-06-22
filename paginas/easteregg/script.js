@@ -172,6 +172,7 @@ function shuffleCards() {
   matched = 0; // Reseta o contador de pares de cartas iguais encontrados
   cardUm = cardDois = ""; // Reseta as variáveis das cartas selecionadas
   let arr = [4, 6, 8, 10, 12, 20, 4, 6, 8, 10, 12, 20]; // Array com os números das imagens das cartas
+  
   arr.sort(() => (Math.random() > 0.5 ? 1 : -1)); // Embaralha o array
 
   cards.forEach((card, index) => {

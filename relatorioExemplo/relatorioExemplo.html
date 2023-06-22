@@ -139,28 +139,40 @@
         <input class="downloadButton" type="button" onclick="generatePDF()" value="Baixar em PDF" />
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+    integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+    crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.plugin.addimage.js"></script>
 
 <script>
     function generatePDF() {
+        // Função para gerar o PDF
 
         let DataHoje = new Date();
         let DataFormatada = DataHoje.getDate() + '-' + parseInt(DataHoje.getMonth() + 1) + '-' + DataHoje.getFullYear() + '-' + DataHoje.getHours() + '-' + DataHoje.getMinutes();
+        // Obtém a data atual e formata como uma string no formato DD-MM-AAAA-HH-MM
 
         let doc = new jsPDF('p', 'pt', 'letter');
+        // Cria uma nova instância do objeto jsPDF para gerar o PDF
+        // Parâmetros: 'p' (orientação retrato), 'pt' (unidade em pontos), 'letter' (tamanho da página)
+
         let htmlstring = '';
         let tempVarToCheckPageHeight = 0;
         let pageHeight = 0;
         pageHeight = doc.internal.pageSize.height;
+        // Variáveis para controlar a altura da página do PDF
+
         specialElementHandlers = {
-            // element with id of "bypass" - jQuery style selector  
+            // Elementos especiais no documento que podem ter manipulação personalizada
+
+            // Elemento com id "bypass" - seletor estilo jQuery
             '#bypassme': function (element, renderer) {
-                // true = "handled elsewhere, bypass text extraction"  
+                // true = "manipulado em outro lugar, ignorar extração de texto"
                 return true
             }
         };
+
         margins = {
             top: 150,
             bottom: 60,
@@ -168,14 +180,14 @@
             right: 150,
             width: 600
         };
+        // Configuração das margens do documento
 
-        var y = 20;
+        var y = 20; // Posição vertical inicial
 
-        doc.setLineWidth(2);
-
-        // doc.addImage('../../media/logo.png', 'PNG', 2470, 10, 10, 10, 'logo', 'NONE', 0);
+        doc.setLineWidth(2); // Define a largura da linha
 
         doc.text(200, y = y + 30, "Participação na Mesa");
+        // Adiciona um texto ao documento na posição (200, y) e atualiza a posição vertical (y)
 
         doc.autoTable({
             html: '#tabelaDeMesa',
@@ -184,8 +196,15 @@
             styles: {
                 minCellHeight: 20
             }
-        })
+        });
+        // Gera uma tabela automática no PDF
+        // Obtém o HTML da tabela com id "tabelaDeMesa"
+        // Inicia a tabela na posição vertical 80
+        // Define o tema como 'grid' (com grade)
+        // Define um estilo mínimo de altura das células como 20
+
         doc.save('Relatório_' + DataFormatada + '.pdf');
+        // Salva o PDF com o nome "Relatório_" seguido da data formatada
     }
 </script>
 
