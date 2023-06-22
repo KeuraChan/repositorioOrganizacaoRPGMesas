@@ -1,9 +1,14 @@
+
+
 @font-face {
   font-family: "DragonHunter";
   src: url(../media/DragonHunter-9Ynxj.otf) format("opentype");
   font-weight: normal;
   font-style: normal;
 }
+
+/* Nesse trecho, está sendo definida uma fonte personalizada chamada "DragonHunter" usando @font-face.
+ Ela está sendo carregada a partir do arquivo "DragonHunter-9Ynxj.otf" localizado na pasta "media". */
 
 :root {
   --button-accept-color: #4e9350;
@@ -13,6 +18,8 @@
   --text-in-white: #e7e7e7;
 }
 
+/* Aqui são definidas algumas variáveis de cor usando a sintaxe de CSS custom properties.
+ Elas são usadas posteriormente para estilizar outros elementos. */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -33,6 +40,8 @@
   border-radius: 10px;
   border: 3px solid #eaeaea;
 }
+/* Essas regras estilizam a aparência da barra de rolagem em navegadores que suportam o prefixo -webkit-.
+Define a largura da barra de rolagem, a cor de fundo da área de rastreamento e a cor e estilo da alça da barra de rolagem. */
 
 .loader {
   display: block;
@@ -58,9 +67,11 @@
     transform: rotate(1turn);
   }
 }
-
+/* Essas regras definem a aparência do elemento de carregamento (loader).
+ Ele é exibido como um bloco, centralizado horizontalmente, com uma largura e altura de 120 pixels.
+  A imagem dentro do elemento é girada continuamente usando uma animação enquanto a tela não carrega
+Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
 #container {
-  /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
   display: none;
 }
 
@@ -68,9 +79,13 @@
 .locked{
   background-color: #bbb;
 }
+/* Essa regra define a cor de fundo como cinza claro (#bbb) para elementos que possuam a classe "locked".
+Isso pode ser usado para indicar visualmente que um elemento está bloqueado ou indisponível. */
+
 body {
   background-color: rgb(233, 233, 233);
 }
+/* Essa regra define a cor de fundo do elemento <body> como um tom de cinza claro (rgb(233, 233, 233)). */
 
 main {
   margin-left: 100px;
@@ -79,6 +94,8 @@ main {
   max-height: 80vh;
   /* margin-bottom: 15%; */
 }
+/* Essa regra estiliza o elemento <main>. 
+Ele possui uma margem esquerda de 100 pixels, altura mínima de 70% da altura da janela, uma barra de rolagem vertical quando necessário e altura máxima de 80% da altura da janela. */
 
 /* Define o cabeçalho */
 header {
@@ -98,6 +115,10 @@ header {
   outline: none;
   width: 98%;
 }
+/* Essa regra estiliza o elemento <header>. Ele é exibido como um flex container com conteúdo alinhado horizontalmente.
+A propriedade font-family define a fonte usada como "DragonHunter". 
+A propriedade background-image define uma imagem de fundo a partir do arquivo "bgcortado.jpg" localizado na pasta "media". 
+O texto dentro do cabeçalho é centralizado e possui um sombreamento. O cabeçalho possui uma largura de 98% do contêiner pai. */
 
 #lista_mesas {
   display: flex;
@@ -109,6 +130,10 @@ header {
   padding-bottom: 15%;
   margin: 5% 5% 5% 15%;
 }
+/* Essa regra estiliza o elemento com o ID "lista_mesas". Ele é exibido como um flex container com conteúdo distribuído em várias linhas.
+O conteúdo é alinhado à esquerda e centralizado verticalmente. 
+O elemento tem uma altura de 90% do contêiner pai e possui preenchimento nas laterais e na parte inferior.
+Também possui margem de 5% no topo e nas laterais e margem de 15% na parte inferior. */
 
 .userCard {
   display: flex;
@@ -129,6 +154,10 @@ header {
   box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 1);
 }
 
+/* Essa regra estiliza elementos com a classe "userCard". Os elementos são exibidos como flex container com conteúdo alinhado verticalmente na parte inferior.
+Eles têm uma direção de fluxo de coluna e possuem bordas arredondadas. Possuem margem de 0.5rem nas laterais, preenchimento de 1em, largura máxima de 100px, altura automática e uma cor de fundo com transparência.
+Também aplicam efeitos de desfoque ao plano de fundo e têm uma sombra. */
+
 .userCard .userPerfilImage {
   user-select: none;
   cursor: pointer;
@@ -137,6 +166,8 @@ header {
   border: 1px solid black;
   border-radius: 50%;
 }
+/* Essa regra estiliza elementos com a classe "userPerfilImage" que estão dentro de um elemento com a classe "userCard".
+Esses elementos não podem ser selecionados pelo usuário, possuem o cursor do mouse como um ponteiro, uma largura de 60 pixels, uma margem de 8% no topo e 2% nas laterais, uma borda sólida de 1 pixel na cor preta e uma borda circular com raio de 50%. */
 
 .userCard h2 {
   user-select: none;
@@ -146,15 +177,19 @@ header {
   transition: .2s;
 }
 
+
 .userCard h2:hover {
   color: #fff;
 }
+/* Essas regras estilizam elementos <h2> que estão dentro de um elemento com a classe "userCard". Esses elementos não podem ser selecionados pelo usuário, possuem uma posição relativa, uma cor de texto definida pela variável --text-in-white, o cursor do mouse como um ponteiro e uma transição de 0.2 segundos para efeitos de hover.
+Quando o elemento é hover, a cor do texto é alterada para branco (#fff) */
 
 .title {
   letter-spacing: 5px;
   margin: 0 auto;
   width: 60%;
 }
+/* Essa regra estiliza elementos com a classe "title". Eles possuem um espaçamento entre letras de 5 pixels, margem superior e inferior de 0 e margem esquerda e direita automáticas. Eles também possuem uma largura de 60%. */
 
 header h1 {
   background: rgba(0, 0, 0, 0.222);
@@ -164,17 +199,21 @@ header h1 {
   -webkit-backdrop-filter: blur(2px);
   border: 1px solid rgba(53, 53, 53, 0.323);
 }
+/* Essa regra estiliza elementos <h1> que estão dentro de um elemento <header>. Eles possuem um plano de fundo com cor preta e transparência de 0.222, uma borda arredondada com raio de 16 pixels, uma sombra e um efeito de desfoque aplicado ao plano de fundo.
+A borda é sólida, com 1 pixel de espessura e uma cor definida por rgba(53, 53, 53, 0.323). */
 
 .title form {
   margin: 0 auto;
   padding-top: 2%;
 }
+/* Essa regra estiliza elementos <form> que estão dentro de elementos com a classe "title". Eles possuem margem automática na parte superior e preenchimento de 2% na parte superior. */
 
 .search-box {
   margin-top: 8%;
   align-items: center;
   width: 60%;
 }
+/* Essa regra estiliza elementos com a classe "search-box". Eles possuem margem superior de 8%, alinhamento centralizado verticalmente e uma largura de 60%. */
 
 .input-search {
   position: relative;
@@ -191,6 +230,9 @@ header h1 {
   padding-right: 40px;
   color: #fff;
 }
+/* Essa regra estiliza elementos com a classe "input-search". Eles possuem uma posição relativa, uma altura de 5 pixels, uma largura de 75%, sem estilo de borda, um preenchimento de 10 pixels,
+um tamanho de fonte de 18 pixels, um espaçamento entre letras de 2 pixels, sem contorno, uma borda circular com raio de 25 pixels, 
+uma transição de 0.5 segundos para todas as propriedades, uma cor de fundo definida por #fed063ae, um preenchimento de 40 pixels na parte direita, uma cor de texto branca (#fff). */
 
 .input-search::placeholder {
   color: rgba(255, 255, 255, 0.383);
@@ -198,6 +240,8 @@ header h1 {
   letter-spacing: 2px;
   font-weight: 100;
 }
+/* Essa regra estiliza o texto de espaço reservado (placeholder) dentro do elemento com a classe "input-search".
+ Ele tem uma cor definida por rgba(255, 255, 255, 0.383), um tamanho de fonte de 18 pixels, um espaçamento entre letras de 2 pixels e um peso de fonte de 100. */
 
 .btn-search {
   display: none;
@@ -215,6 +259,10 @@ header h1 {
   background-color: transparent;
   pointer-events: painted;
 }
+/* Essa regra estiliza elementos com a classe "btn-search". Eles não são exibidos, têm uma largura de 45 pixels, uma altura de 50 pixels, uma margem à esquerda de 20 pixels, sem estilo de borda, 
+um tamanho de fonte de 20 pixels, um peso de fonte em negrito, sem contorno, o cursor do mouse como um ponteiro, uma borda circular com raio de 50%, 
+uma posição à direita de 0 pixels, uma cor de texto branca (#ffffff),
+uma cor de fundo transparente e eventos de ponteiro habilitados */
 
 .btn-search:focus~.input-search {
   width: 30px;
@@ -223,6 +271,9 @@ header h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
 }
+/* Essa regra estiliza o elemento .input-search quando o elemento .btn-search está em foco. 
+O .input-search tem sua largura reduzida para 30 pixels, um raio de borda de 0 pixels, uma cor de fundo transparente,
+ uma borda inferior sólida de 1 pixel com uma cor definida por rgba(255, 255, 255, 0.5) e uma transição de 500 milissegundos com uma função de timing definida por cubic-bezier(0, 0.11, 0.35, 2) */
 
 .input-search:focus {
   width: 150%;
@@ -231,6 +282,8 @@ header h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 750ms cubic-bezier(0, 0.11, 0.35, 2);
 }
+/* Essa regra estiliza o elemento .input-search quando está em foco. Ele tem sua largura expandida para 150%, um raio de borda de 20 pixels, uma cor de fundo definida por rgba(0, 0, 0, 0.5),
+ uma borda inferior sólida de 1 pixel com uma cor definida por rgba(255, 255, 255, 0.5) e uma transição de 750 milissegundos com uma função de timing definida por cubic-bezier(0, 0.11, 0.35, 2). */
 
 .sidebar {
   -moz-box-shadow: 4px 0px 5px 0px rgba(0, 0, 0, 0.38);
@@ -250,21 +303,29 @@ header h1 {
   transition: 0.5s;
   z-index: 2;
 }
+/* Essa regra estiliza o elemento .sidebar. Ele tem uma sombra aplicada tanto no Mozilla Firefox quanto nos outros navegadores, uma altura de 100% da altura da janela de visualização, 
+uma altura mínima de 500 pixels, uma largura de 60 pixels, uma posição fixa, um layout de coluna flexível, um alinhamento vertical com espaçamento uniforme, 
+uma posição à esquerda de 0 pixels, uma posição superior de 24% da altura da janela de visualização, uma cor de fundo definida por #a23226b4, um overflow oculto, 
+um raio de borda de 3 pixels, uma transição de 0.5 segundos e um índice z de 2. */
 
 .sidebar:hover {
   width: 162px;
 }
+/* Essa regra estiliza o elemento .sidebar quando o cursor do mouse está sobre ele. Ele tem sua largura expandida para 162 pixels. */
 
 .sidebar .logo img {
   width: 56px;
   padding: 0 4px;
   margin: 30px 0;
 }
+/* Essa regra estiliza a imagem dentro do elemento .logo que está dentro do elemento .sidebar.
+A imagem tem uma largura de 56 pixels, um preenchimento de 0 pixels na direita e esquerda, e uma margem de 30 pixels na parte superior e inferior. */
 
 .sidebar nav {
   height: 60vh;
   min-height: 300px;
 }
+/* Essa regra estiliza o elemento .nav dentro do elemento .sidebar. Ele tem uma altura de 60% da altura da janela de visualização e uma altura mínima de 300 pixels. */
 
 .sidebar nav ul {
   list-style: none;
@@ -273,6 +334,8 @@ header h1 {
   flex-direction: column;
   justify-items: center;
 }
+/* Essa regra estiliza a lista não ordenada dentro do elemento .nav dentro do elemento .sidebar.
+Ela remove os estilos padrão de lista, define uma altura de 100%, aplica um layout de coluna flexível, alinha os itens ao centro verticalmente. */
 
 .sidebar li a {
   width: 160px;
@@ -285,6 +348,10 @@ header h1 {
   margin: 10px 0 10px 0;
   transition: 0.8s;
 }
+/* Essa regra estiliza os elementos <a> dentro dos itens de lista <li> dentro do elemento .nav dentro do elemento .sidebar. 
+Os elementos <a> têm uma largura de 160 pixels, um layout de linha flexível, alinham os itens ao centro verticalmente e distribuem o espaço disponível ao redor igualmente, 
+removem a decoração de texto, um preenchimento de 10 pixels na parte superior e inferior, uma cor de texto definida por #cacaca, 
+uma margem de 10 pixels na parte superior e inferior e uma transição de 0.8 segundo */
 
 .sidebar li a:hover {
   background-image: linear-gradient(to right,
@@ -292,11 +359,15 @@ header h1 {
       rgb(0, 0, 0, 0.1) 7px);
   color: #fff;
 }
+/* Essa regra estiliza os elementos <a> dentro dos itens de lista <li> dentro do elemento .nav dentro do elemento .sidebar quando o cursor do mouse está sobre eles.
+ É aplicada uma imagem de plano de fundo linear gradiente que vai da cor rgba(199, 110, 38, 0.726) até a cor rgb(0, 0, 0, 0.1)
+A partir de 7 pixels da esquerda, e a cor do texto é definida como branco (#fff). */
 
 .sidebar i {
   font-size: 30px;
   text-align: right;
 }
+/* Essa regra estiliza os elementos <i> dentro do elemento .sidebar. Eles têm um tamanho de fonte de 30 pixels e um alinhamento de texto à direita. */
 
 .sidebar li p {
   width: 75px;
@@ -305,24 +376,31 @@ header h1 {
   letter-spacing: 0.3px;
   margin-top: 10px;
 }
+/* Essa regra estiliza os elementos <p> dentro dos itens de lista <li> dentro do elemento .sidebar. 
+Os elementos <p> têm uma largura de 75 pixels, um tamanho de fonte de 16 pixels, um alinhamento de texto à esquerda, um espaçamento entre letras de 0.3 pixels e uma margem superior de 10 pixels. */
 
 .sidebar li .usarioUser {
   display: none;
 }
+/* Essa regra estiliza os elementos com a classe .usarioUser que estão dentro dos itens de lista <li> dentro do elemento .sidebar. Os elementos com essa classe têm a exibição definida como "none" (não visível). */
 
 .mesa {
   display: block;
   justify-content: space-around;
   padding: 3%;
 }
+/* Essa regra estiliza os elementos com a classe .mesa. Eles têm a exibição definida como "block", ou seja, são exibidos em blocos. Além disso, 
+têm o alinhamento justificado ao redor do espaço disponível e um preenchimento de 3%. */
 
 .Mestre {
   margin-bottom: 10%;
 }
+/* Essa regra estiliza os elementos com a classe .Mestre. Eles têm uma margem inferior de 10%. */
 
 .Mcard {
   margin: 0 auto;
 }
+/* Essa regra estiliza os elementos com a classe .Mcard. Eles têm uma margem horizontal automática (centralizados horizontalmente). */
 
 .Mcard img {
   margin: 0 auto;
@@ -335,10 +413,14 @@ header h1 {
   /* mantém a proporção da imagem */
   object-position: center;
 }
+/* Essa regra estiliza as imagens dentro dos elementos com a classe .Mcard. As imagens têm uma margem horizontal automática (centralizadas horizontalmente), 
+um formato de borda circular (50% de raio), um preenchimento de 5 pixels, uma largura de 200 pixels, uma altura de 200 pixels, uma transição de 1.8 segundos, 
+um ajuste de objeto de "cover" (preenche o contêiner mantendo a proporção) e uma posição de objeto centralizada. */
 
 .Mcard h3 {
   text-align: center;
 }
+/* Essa regra estiliza os elementos <h3> dentro dos elementos com a classe .Mcard. O texto dentro desses elementos é centralizado. */
 
 .Mcard {
   text-align: center;
@@ -354,17 +436,19 @@ header h1 {
   box-shadow: -13px 13px 14px -10px rgba(0, 0, 0, 0.96);
   transition: 1s;
 }
-
+/* Essa regra estiliza os elementos com a classe .Mcard. Eles têm o alinhamento de texto centralizado, um preenchimento de 1em, uma margem inferior de 10 pixels, um preenchimento de 1%, 
+uma exibição flexível, uma largura de 300 pixels, um alinhamento justificado ao centro, uma direção de fluxo de coluna, um raio de borda de 1em, uma cor de fundo de #72757a,
+uma sombra de caixa com deslocamento de -13px 13px 14px -10px e uma transição de 1 segundo. */
 .Mcard:hover {
   transform: scale(1.1);
 }
-
+/* Essa regra estiliza os elementos com a classe .Mcard quando estão em estado de hover (quando o cursor do mouse está sobre eles). Eles têm uma transformação de escala de 1.1 (ficam 10% maiores). */
 .Jogadores {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
+/* Essa regra estiliza os elementos com a classe .Jogadores. Eles têm uma exibição flexível, um alinhamento justificado ao espaço igualmente distribuído e uma quebra de linha flexível. */
 .Pcard {
   list-style: none;
   margin-bottom: 10px;
@@ -379,7 +463,9 @@ header h1 {
   box-shadow: -13px 13px 14px -10px rgba(0, 0, 0, 0.96);
   transition: 1s;
 }
-
+/* Essa regra estiliza os elementos com a classe .Pcard. Eles têm a listagem de estilo definida como "none" (sem marcadores), uma margem inferior de 10 pixels, 
+um preenchimento de 1%, um alinhamento de texto justificado, uma exibição flexível, uma largura de 300 pixels, um alinhamento justificado ao centro, uma direção de fluxo de coluna, 
+um raio de borda de 1em, uma cor de fundo de #72757a, uma sombra de caixa com deslocamento de -13px 13px 14px -10px e uma transição de 1 segundo. */
 .Pcard img {
   margin: 0 auto;
   border-radius: 50%;
@@ -393,21 +479,26 @@ header h1 {
   /* mantém a proporção da imagem */
   object-position: center;
 }
-
+/* Essa regra estiliza as imagens dentro dos elementos com a classe .Pcard. As imagens têm uma margem horizontal automática (centralizadas horizontalmente), 
+um formato de borda circular (50% de raio), um preenchimento de 5 pixels, uma largura de 200 pixels, 
+uma altura de 200 pixels, uma transição de 1.8 segundos, um ajuste de objeto de "cover" 
+(preenche o contêiner mantendo a proporção) e uma posição de objeto centralizada. */
 .Pcard p {
   text-align: center;
   padding: 1em;
 }
+/* Essa regra estiliza os elementos <p> dentro dos elementos com a classe .Pcard. O texto dentro desses elementos é centralizado e há um preenchimento interno de 1em. */
 
 .Pcard:hover {
   transform: scale(1.1);
 }
-
+/* Essa regra estiliza os elementos com a classe .Pcard quando estão em estado de hover (quando o cursor do mouse está sobre eles). Eles têm uma transformação de escala de 1.1 (ficam 10% maiores). */
 .Pcard img:hover {
   transform: scale(1.2);
   border-radius: 10px;
 }
-
+/* Essa regra estiliza as imagens dentro dos elementos com a classe .Pcard quando estão em estado de hover. 
+As imagens têm uma transformação de escala de 1.2 (ficam 20% maiores) e um formato de borda circular com um raio de 10 pixels. */
 .Pcard button {
   border-radius: 1em;
   height: 30px;
@@ -415,7 +506,9 @@ header h1 {
   background-color: #434a52;
   color: #fff;
 }
-
+/* Essas regras estilizam os botões dentro dos elementos com a classe .Pcard. 
+Os botões têm um formato de borda circular com um raio de 1em, uma altura de 30 pixels, nenhuma borda, 
+uma cor de fundo de #434a52 e uma cor de texto branca. Quando estão em estado de hover, a cor de fundo é alterada para #434a52e5. */
 .Pcard button:hover {
   background-color: #434a52e5;
 }
@@ -494,7 +587,10 @@ header h1 {
   margin-top: 10px;
   font-size: 14px;
 }
-
+/* Essas regras estilizam os elementos com a classe .cardMesa, que parecem ser cartões de uma mesa. Eles têm um fundo gradiente, um formato de borda circular com um raio de 16px, uma sombra de caixa, 
+um filtro de plano de fundo embaçado, uma borda sólida, uma margem de 1%, um preenchimento interno de 10px, uma largura de 200px, uma altura automática, 
+uma transição de todas as propriedades com duração de 0.3s, uma sombra e um aumento de escala sutis quando estão em estado de hover. 
+Além disso, existem regras para os elementos dentro desses cartões, como cabeçalho, imagem, título, botões, conteúdo e notas do GM (mestre de jogo). */
 .GM_Notes {
   margin: 0 auto;
   border-radius: 16px;
@@ -514,25 +610,32 @@ header h1 {
   overflow: scroll;
   /* overflow-y: ; */
 }
-
+/* Essa regra estiliza um elemento com a classe .GM_Notes. Ele tem uma margem automática horizontalmente, um formato de borda circular com um raio de 16px, uma posição absoluta, 
+uma distância de 20% a partir do topo da janela, 5% a partir do fundo da janela e preenche todo o espaço horizontal. O elemento tem um tamanho máximo de 90% da largura disponível e 60% da altura disponível,
+ mas não deve ser menor que 50% da largura e altura disponíveis. Se o conteúdo exceder as dimensões, uma barra de rolagem será exibida. */
 .user_selected_menu {
   padding: 1% 3% 3% 10%;
   position: inherit;
 }
-
+/* Essa regra estiliza um elemento com a classe .user_selected_menu. Ele tem um preenchimento de 1% no topo, 3% à direita e à esquerda, e 10% na parte inferior. A posição é herdada do elemento pai. */
 .user_info {
   display: flex;
   flex-direction: column;
   max-height: 60vh;
   overflow-y: scroll;
 }
-
+/* Essa regra estiliza um elemento com a classe .user_info. Ele tem um layout flexível com direção de coluna, ou seja, os elementos filho serão empilhados verticalmente.
+O elemento tem uma altura máxima de 60% da altura da janela do navegador e se o conteúdo exceder essa altura, uma barra de rolagem vertical será exibida. */
 .user_info .formularioSenha,
 .user_info .formularioPerfil {
   /* display: flex; */
   flex-direction: row;
   flex-wrap: wrap;
 }
+/* Essa regra estiliza os elementos com as classes .formularioSenha e .formularioPerfil que estão dentro de um elemento com a classe .user_info. 
+Esses elementos terão um layout flexível com direção de linha, ou seja, serão dispostos horizontalmente. Se o conteúdo exceder a largura disponível, os elementos serão quebrados para a próxima linha.
+Essas são apenas algumas das regras de estilo presentes no código CSS fornecido. 
+Cada regra define diferentes propriedades para os elementos correspondentes, como posicionamento, tamanho, cores, margens, preenchimentos e efeitos de transição. */
 
 .user_info .formularioSenha input,
 .user_info .formularioPerfil input {
@@ -543,10 +646,14 @@ header h1 {
   border: none;
   border-radius: 8px;
 }
+/* Essa regra estiliza os elementos input que estão dentro de elementos com as classes .formularioSenha e .formularioPerfil que, por sua vez, estão dentro de um elemento com a classe .user_info. 
+Esses inputs serão exibidos em linha, terão uma largura de 300px, um espaçamento interno de 10px, uma margem inferior de 20px, nenhuma borda visível e bordas arredondadas com um raio de 8px. */
 
 .user_info .formularioSenha input[type="email"] {
   min-width: 800px;
 }
+/* Essa regra estiliza o input do tipo "email" que está dentro de um elemento com a classe .formularioSenha que, por sua vez, está dentro de um elemento com a classe .user_info. 
+Esse input terá uma largura mínima de 800px. */
 
 .user_info .formularioSenha input[type="submit"],
 .user_info .formularioPerfil input[type="submit"] {
@@ -570,14 +677,19 @@ header h1 {
   border-radius: 8px;
   transition: 0.5s;
 }
-
+/* Essa regra estiliza os input do tipo "submit" que estão dentro de elementos com as classes .formularioSenha e .formularioPerfil que, por sua vez, estão dentro de um elemento com a classe .user_info.
+ Esses inputs terão uma largura de 200px, uma margem à esquerda de 15px, uma cor de fundo definida pela variável --button-accept-color, nenhuma borda visível, texto na cor branca, 
+ um espaçamento interno de 10px na vertical e 20px na horizontal, alinhamento central do texto, nenhum sublinhado, serão exibidos em linha, terão um tamanho de fonte de 1.09em, 
+ bordas arredondadas com um raio de 8px e terão uma transição de 0.5s aplicada a eles. */
 .user_info .formularioSenha input[type="submit"]:hover,
 .user_info .formularioPerfil input[type="submit"]:hover {
   cursor: pointer;
   background-color: var(--button-accept-color-hover);
   transform: scale(1.1);
 }
-
+/* Essa regra estiliza os input do tipo "submit" que estão dentro de elementos com as classes .formularioSenha e .formularioPerfil que, por sua vez, estão dentro de um elemento com a classe .user_info, 
+quando o cursor estiver sobre eles. Nesse caso, o cursor do mouse se tornará um ponteiro, a cor de fundo será alterada para a cor definida pela variável 
+--button-accept-color-hover e os elementos serão aumentados em 10% de escala em relação ao tamanho original. */
 .user_info .userPerfilImage {
   cursor: pointer;
   width: 200px;
@@ -585,7 +697,9 @@ header h1 {
   border-radius: 50%;
   margin: 3%;
 }
-
+/* Essa regra estiliza a classe .userPerfilImage que está dentro de um elemento com a classe .user_info. 
+O elemento terá o cursor do mouse alterado para um ponteiro quando passar por cima, terá uma largura e altura de 200px, 
+um formato circular com bordas arredondadas, e uma margem externa de 3%. */
 .user_info .carregarImagemUser {
   overflow: hidden;
   font-size: 100px;
@@ -594,7 +708,11 @@ header h1 {
   top: 0;
   opacity: 0;
 }
-
+/* Essa regra estiliza a classe .carregarImagemUser que está dentro de um elemento com a classe .user_info. 
+O elemento terá o overflow oculto, ou seja, qualquer conteúdo que exceda seu tamanho será cortado.
+Ele também terá um tamanho de fonte de 100px, uma posição absoluta em relação ao elemento pai,
+com o canto superior esquerdo posicionado no canto superior esquerdo do elemento pai.
+A propriedade opacity define a opacidade do elemento como 0, tornando-o invisível. */
 .user_info .textInfo {
   letter-spacing: 3px;
   color: #000;
@@ -602,6 +720,9 @@ header h1 {
   margin: 30px;
 
 }
+/* Essa regra estiliza a classe .textInfo que está dentro de um elemento com a classe .user_info. 
+O texto dentro desse elemento terá um espaçamento entre letras de 3px, uma cor de texto preta (#000), 
+uma fonte específica chamada "DragonHunter" e uma margem externa de 30px. */
 
 #toggle-edit {
   border-radius: 50%;
@@ -615,12 +736,15 @@ header h1 {
   cursor: pointer;
   z-index: 9999;
 }
+/* Essa regra estiliza o elemento com o ID toggle-edit. Ele terá bordas arredondadas com um raio de 50%, posicionado 20px a partir do topo e 20px a partir da direita do elemento pai. 
+Terá um tamanho de fonte de 16px, uma cor de fundo de #333 (cinza escuro), texto na cor branca (#fff), nenhuma borda visível, um espaçamento interno de 10px, 
+o cursor será alterado para um ponteiro quando passar por cima e uma propriedade z-index de 9999 que define a ordem de empilhamento do elemento */
 
 #toggle-edit.active {
   background-color: #858585;
   color: white;
 }
-
+/* Essa regra estiliza o elemento com o ID toggle-edit quando ele também tiver a classe .active. Nesse caso, a cor de fundo será alterada para #858585 (cinza mais claro) e o texto será na cor branca. */
 /*===*/
 
 footer {
@@ -639,6 +763,10 @@ footer {
   z-index: 1;
   /* height: 1%; */
 }
+/* Essas regras estilizam o elemento footer. Ele será exibido como um flex container com conteúdo centralizado, margem automática horizontal, alinhamento de texto centralizado, cor de texto branca (#fff),
+preenchimento interno de 1%, bordas arredondadas no canto superior esquerdo e superior direito, cor de fundo #202123, posicionado na parte inferior da página (bottom: 0), terá largura de 100% e uma altura mínima de 110px.
+A propriedade z-index define a ordem de empilhamento do elemento.
+O elemento com a classe .conteudo-footer dentro do footer será exibido como um flex container, com cor de texto branca, conteúdo justificado igualmente e com quebra de linha quando necessário. */
 
 .conteudo-footer {
   display: flex;
@@ -687,6 +815,15 @@ footer .redes-sociais i:hover {
   transition: 100ms;
 }
 
+/* Essas regras estilizam os elementos filhos dentro do footer.
+
+.conteudo1 terá um espaçamento interno de 0 nas laterais e 40px no topo e na parte inferior, uma margem inferior de 20px e uma largura fixa de 450px.
+.conteudo2 terá um espaçamento interno de 1 (valor não especificado para as laterais), uma margem inferior de 20px e uma largura fixa de 450px.
+.conteudo2 h2 terá um tamanho de fonte de 20px, uma margem inferior de 20px e o alinhamento do texto centralizado.
+.conteudo3 terá uma largura fixa de 450px e uma margem inferior de 20px.
+.redes-sociais i são ícones dentro do elemento com a classe .redes-sociais. Eles terão cor branca, um tamanho de fonte de 30px e uma largura fixa de 30px.
+.redes-sociais será exibido como um flex container com o conteúdo justificado igualmente. */
+
 @media screen and (max-width: 1400px) {
   .conteudo-footer {
     justify-content: space-between;
@@ -714,6 +851,13 @@ footer .redes-sociais i:hover {
     margin-bottom: 20px;
   }
 }
+/* Essas regras aplicam estilos diferentes para os elementos dentro do footer quando a largura da tela é menor ou igual a 1400px.
+
+A classe .conteudo-footer terá o conteúdo justificado entre os elementos.
+.conteudo1 terá um espaçamento interno de 0 nas laterais e 40px no topo e na parte inferior, uma margem inferior de 20px e sua largura será definida como 30% da largura do footer.
+.conteudo2 terá uma largura de 20% e uma margem inferior de 20px.
+.conteudo2 h2 terá um tamanho de fonte de 20px, uma margem inferior de 20px e o alinhamento do texto centralizado.
+.conteudo3 terá uma largura de 30% e uma margem inferior de 20px. */
 
 @media screen and (max-width: 770px) {
   header {
@@ -772,6 +916,7 @@ footer .redes-sociais i:hover {
   }
 
 }
+/* Essa regra de media query é aplicada quando a largura da tela é menor ou igual a 770px. No código fornecido, o restante das regras dentro dessa media query está faltando, então não posso comentar sobre elas. */
 
 @media screen and (max-width: 500px) {
 
@@ -915,6 +1060,7 @@ footer .redes-sociais i:hover {
   }
 
 }
+/* Essa regra de media query é aplicada quando a largura da tela é menor ou igual a 500px. No código fornecido, o restante das regras dentro dessa media query está faltando, então não posso comentar sobre elas. */
 
 
 /* Fix para o campo de busca em dispositivos mobiles */

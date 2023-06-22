@@ -4,6 +4,7 @@
   --button-reject-color: #af4c4c;
   --button-reject-color-hover: #6f3333;
 }
+/* Essas variáveis definem cores personalizadas que serão utilizadas posteriormente nos estilos dos botões. */
 
 #container {
   /* Ocultar o conteúdo do site enquanto a tela de carregamento é exibida */
@@ -17,6 +18,8 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+/* #container é ocultado inicialmente.
+O seletor * define estilos gerais para todos os elementos da página, como uma transição de 100ms, margem e preenchimento zero, a fonte Arial, Helvetica, sans-serif e o box-sizing como border-box. */
 
 @font-face {
   font-family: "DragonHunter";
@@ -24,6 +27,7 @@
   font-weight: normal;
   font-style: normal;
 }
+/* Essa regra define uma fonte personalizada chamada "DragonHunter" que será usada posteriormente. */
 
 .loader {
   position: absolute;
@@ -54,13 +58,14 @@
   }
 }
 
-
+/* Essas regras definem o estilo do elemento de carregamento, incluindo sua posição, tamanho e animação de rotação. */
 
 body {
   min-width: 450px;
   background-image: url("../media/bgcortado.jpg");
   /* background-color: rgb(240, 240, 240); */
 }
+/* Essa regra define estilos gerais para o corpo da página, incluindo uma imagem de plano de fundo e uma largura mínima de 450px */
 
 .telasLoginLogonCreation {
   background-color: #dfdfdff2;
@@ -203,6 +208,8 @@ body {
   width: 50px;
 }
 
+/* Essas regras estilizam os elementos da seção de login/logon, como a caixa de conteúdo, o logotipo, títulos, links, botões e campos de entrada. */
+
 input,
 select {
   display: inline-block;
@@ -273,6 +280,8 @@ select {
   background-color: #853939;
 }
 
+/* Essas regras definem os estilos dos botões "Confirmar" e "Cancelar", incluindo cores de fundo, bordas, cores de texto e efeitos de hover. */
+
 footer {
   position: fixed;
   bottom: 0;
@@ -281,6 +290,8 @@ footer {
   clear: both;
   text-align: center;
 }
+
+/* Essa regra define estilos para o rodapé da página, incluindo sua posição fixa, fundo com gradiente e alinhamento de texto. */
 
 @media (max-width: 920px) {
   .telasLoginLogonCreation {
@@ -346,3 +357,5 @@ footer {
     text-align: center;
   }
 }
+
+/* Essas regras aplicam estilos específicos quando a largura da tela atinge determinados pontos de interrupção, ajustando o layout e os tamanhos dos elementos para dispositivos com telas menores. */
