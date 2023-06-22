@@ -15,8 +15,3 @@ Repositório de organização para uma página RPGs de Mesa
   Tela de Logon;<br/>
   "Segredo" na Tela de Usuário;<br/>
   Responsividade das páginas¹<br/>
- 
- ## A se fazer:
-  Implementar a API de DnD disponível em: https://www.dnd5eapi.co/docs/; <br/>
-  Mudar o Card de usuário.<br/>
-  Ter foto de usuário;
