@@ -14,4 +14,5 @@ Repositório de organização para uma página RPGs de Mesa
   Tela de Login;<br/>
   Tela de Logon;<br/>
   "Segredo" na Tela de Usuário;<br/>
-  Responsividade das páginas¹<br/>
+  Responsividade das páginas<br/>
+  Comentários<br/>
