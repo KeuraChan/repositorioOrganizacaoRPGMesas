@@ -13,6 +13,6 @@ Repositório de organização para uma página RPGs de Mesa
   Tela da Mesa ;<br/>
   Tela de Login;<br/>
   Tela de Logon;<br/>
-  "Segredo" na Tela de Usuário;<br/>
+  Jogo da memória na Tela de Usuário;<br/>
   Responsividade das páginas<br/>
   Comentários<br/>
